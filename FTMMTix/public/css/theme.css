@@ -1,0 +1,159 @@
+/* filepath: c:\xampp\htdocs\FTMMTix\public\css\theme.css */
+
+/* =========================
+   Default Light Mode
+   ========================= */
+body {
+  background-color: #fffafa;
+  color: #313030;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* =========================
+   Dark Mode
+   ========================= */
+body.dark-mode {
+  background-color: #424043;
+  color: #e2dfdf; /*tulisan event card*/
+}
+
+/* Warna teks di Dark Mode */
+body.dark-mode p { color: #5d5959; } /*deskripsi footer*/
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3 { color: #e5e7eb; }
+body.dark-mode .text-muted { color: #726969; }
+body.dark-mode .text-secondary { color: #ffffff; }
+
+/* =========================
+   Navbar
+   ========================= */
+.navbar-light { background-color: #f8f9fa; }
+body.dark-mode .navbar-light { background-color: #9d9c9c; }
+
+/* =========================
+   Buttons
+   ========================= */
+body.dark-mode .btn-outline-secondary {
+  color: #dedbdb; border-color: #beb7b7;
+}
+body.dark-mode .btn-outline-secondary:hover {
+  background-color: #b8b6b6; color: #797474; /*buat di bar light mode & dark mode*/
+}
+
+/* =========================
+   HERO (judul & subjudul)
+   ========================= */
+.hero-title { color: #5d5e5a; font-weight: 700; }
+.hero-subtitle { color: #6b7280; }
+body.dark-mode .hero-title { color: #f3f4f6; }
+body.dark-mode .hero-subtitle { color: #d1d5db; }
+
+/* ===== HERO BADGE ===== */
+.hero-badge {
+  background-color: transparent !important;
+  color: #26371f;
+  font-weight: 600;
+  border: none;
+}
+body.dark-mode .hero-badge { color: #ffffff; }
+
+/* ===== HERO STATISTICS ===== */
+.hero-stat-number { color: #1f2937; transition: color .3s; }
+.hero-stat-label { color: #66696e; transition: color .3s; }
+body.dark-mode .hero-stat-number { color: #ffffff; }
+body.dark-mode .hero-stat-label { color: #d1d5db; }
+
+/* =========================
+   Event Card
+   ========================= */
+.event-card {
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(0,0,0,.06);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+body.dark-mode .event-card {
+  background: #656265;
+  box-shadow: 0 8px 24px rgba(205, 34, 34, 0.25);
+}
+.event-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0,0,0,.10);
+}
+
+/* === Gambar event sesuai ukuran poster (tanpa crop) === */
+.event-thumb-wrap-auto {
+  width: 100%;
+  background-color: #716f6f;  /* latar netral */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;               /* ruang di tepi */
+}
+.event-thumb-auto {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;        /* jaga proporsi asli poster */
+  border-radius: 10px;
+  display: block;
+  object-position: center;
+}
+
+/* Spasi atas section hero (opsional) */
+.section-hero { padding-top: 2.5rem; }
+
+/* ===== Kontras Teks lintas tema ===== */
+:root{
+  --text-1: #111827;    /* utama (light) */
+  --text-2: #4b5563;    /* sekunder (light) */
+  --muted : #6b7280;    /* deskripsi (light) */
+  --card  : #ffffff;
+
+  --badge-fg: #1f2937;          /* teks badge (light) */
+  --badge-bg: rgba(31,41,55,.08);/* bg badge (light) */
+}
+
+[data-theme="dark"]{
+  --text-1: #F3F4F6;   /* utama (dark) */
+  --text-2: #E5E7EB;   /* sekunder (dark) */
+  --muted : #9CA3AF;   /* deskripsi (dark) */
+  --card  : #0B0F14;
+
+  --badge-fg: #E5E7EB;           /* teks badge (dark) */
+  --badge-bg: rgba(229,231,235,.12); /* bg badge (dark) */
+}
+
+/* Terapkan ke body dan komponen umum */
+body{ color: var(--text-1); background: var(--app-bg, #0b0f14); }
+.card, .event-card{ background: var(--card); }
+
+/* Judul event */
+.event-title{ color: var(--text-1); }
+
+/* Baris meta (ikon kalender, jam, lokasi, peserta) */
+.event-meta, .event-meta i, .event-meta span{
+  color: var(--muted);
+}
+
+/* Harga & label “by …” */
+.event-price{ color: var(--text-2); }
+.event-by   { color: var(--muted); }
+
+/* Badge kategori/status (Festival, Limited, dsb) agar selalu terbaca */
+.badge{
+  color: var(--badge-fg) !important;
+  background: var(--badge-bg) !important;
+  border: 1px solid transparent;
+  border-color: color-mix(in oklab, var(--badge-fg) 22%, transparent);
+}
+
+/* Jika kamu punya varian warna, tetap kontras di dark mode */
+.badge-blue   { color: #d3d6db; background: color-mix(in oklab, #2563eb 15%, transparent); }
+.badge-rose   { color: #f43f5e; background: color-mix(in oklab, #f43f5e 15%, transparent); }
+[data-theme="dark"] .badge-blue { background: color-mix(in oklab, #2563eb 25%, transparent); }
+[data-theme="dark"] .badge-rose { background: color-mix(in oklab, #f43f5e 25%, transparent); }
+
+/* Thumbnail caption (jika ada tulisan di bawah gambar) */
+.event-caption{ color: var(--text-2); }

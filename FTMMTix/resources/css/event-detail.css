@@ -1,0 +1,32 @@
+/* Styles for Event Detail Page */
+.display-4 {
+  font-size: 2.5rem;
+  color: #0056b3; /* Biru tua */
+}
+
+.lead {
+  font-size: 1.25rem;
+  color: #4a4b4b; /* Abu-abu */
+}
+
+.bg-white {
+  background-color: #ffffff;
+}
+
+.text-primary {
+  color: #0056b3 !important; /* Biru tua */
+}
+
+.text-warning {
+  color: #ffc107 !important; /* Kuning */
+}
+
+.btn-success {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+  border-color: #1e7e34;
+}
